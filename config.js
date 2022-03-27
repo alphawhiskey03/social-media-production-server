@@ -1,9 +1,10 @@
-module.exports = {
-  MONGODB:
-    "mongodb+srv://vignesh:Atlasvig2203@cluster0.qvdm3.mongodb.net/social-media-app?retryWrites=true&w=majority",
-  SECRET_KEY: "social-media-secret",
-  PORT: 3002,
-};
-//
+const dotenv = require("dotenv");
 
-// mongodb://localhost:27017/social-media
+const result = dotenv.config();
+const envs = result.parsed;
+
+module.exports = {
+  MONGODB: process.env.MONGODB_URI,
+  SECRET_KEY: process.env.JWT_SECRET,
+  PORT: process.env.PORT,
+};
